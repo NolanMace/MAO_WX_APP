@@ -1,0 +1,32 @@
+/* pages/rulesPage/rulesPage.wxss */
+.title {
+    margin: 0 auto;
+    width: 250rpx;
+    height: 50rpx;
+    position: relative;
+}
+
+.titleTextContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleText {
+    color: white;
+    font-size: 48rpx;
+    font-weight: bolder;
+}
+
+.textBorder {
+    -webkit-text-stroke: 10rpx black;
+}
+
+.content {
+    margin-left: 15rpx;
+    margin-right: 15rpx;
+    padding-bottom: 40rpx;
+}

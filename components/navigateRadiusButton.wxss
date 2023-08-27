@@ -1,0 +1,40 @@
+/* components/radiusButton.wxss */
+.selectedBtStyle{
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/buttonCard.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* box-shadow: 0 0 10px 5px #760000; */
+    position: relative;
+}
+
+.btStyle {
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/cardBgUnselected.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* box-shadow: 0 0 10px 5px #760000; */
+    position: relative;
+}
+
+.buttonTextContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unselectedBtTextStyle {
+    font-weight: bolder;
+    color: #7d7871;
+} 
+
+.selectedBtTextStyle {
+    font-weight: bolder;
+    color: white;
+}
+
+.btTextBorder {
+    -webkit-text-stroke: 6rpx #c31d0c;
+}
+

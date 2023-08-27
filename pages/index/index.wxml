@@ -1,0 +1,127 @@
+<!--index.wxml-->
+<view class="container flex-column align-center">
+    <view class="search-container">
+        <view class="search-left">
+            <image src="../../image/search.png" />
+            <input type="text" placeholder="搜索" />
+        </view>
+    </view>
+
+    <view class="windowbars_container flex-row align-center">
+        <view wx:for="{{windowBars}}" wx:key="auto_id" class="windowbar" bindtap="toWindowBar" data-window_name="{{item.window_name}}" data-top_url="{{item.top_url}}" data-cover_url="{{item.cover_url}}">
+            <!-- <view class="window_name font-color-white font-size-28 font_weight_bolder">
+                {{item.window_name}}
+            </view> -->
+            <view class="imageView">
+                <image class="winbar_bg" src="{{item.window_page_url}}" mode="aspectFill"></image>
+                <image class="winbar_pp" src="{{item.people_url}}" mode="aspectFill"></image>
+            </view>
+            <view class="font-size-20">
+                {{item.window_name}}
+            </view>
+        </view>
+    </view>
+    <!-- <swiper bindchange="monitorCurrent" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" class="swiper">
+        <swiper-item wx:for="{{swipers}}">
+            <image src="{{item.image_url}}" mode="aspectFill" class="swiper_item_image" />
+        </swiper-item>
+    </swiper>
+    <view class="dots">
+        <block wx:for="{{swipers}}" wx:for-index="index" wx:key="*this">
+            <view class="{{current==index?'active':''}}"></view>
+        </block>
+    </view> -->
+
+    <!-- <view class="laxin">
+
+    </view> -->
+    <!-- <view class="jinqun-button">
+        进群
+    </view> -->
+    <!-- <view class="shipment_notice shipment_notice_fold" style="height: {{isFold ? '170rpx' : '50rpx'}};">
+        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/shipment_notice.png" mode="widthFix" />
+    </view>
+    <view class="fold_container" bindtap="fold">
+        <image wx:if="{{!isFold}}" src="../../image/unfold.png" mode="scaleToFill" />
+        <image wx:if="{{isFold}}" src="../../image/collapse.png" mode="scaleToFill" />
+    </view> -->
+
+    <view id="navigation" class="navigation flex-row flex-between" style="top: {{menuButtonBottom}}px">
+        <view class="navigation_item_container flex-row flex-center" wx:for="{{navigate_items}}">
+            <image class="navigation-item {{item.active ? 'active' : ''}}" data-category="{{item.category}}" src="{{item.active ? item.selectedUrl : item.url}}" mode="scaleToFill" bindtap="switchSeries" />
+        </view>
+    </view>
+    <view class="scroll-view">
+        <view class="scroll-item" wx:if="{{isBox}}" wx:for="{{boxes}}" wx:key="index" bindtap="toChouShang" data-box_id="{{item.box_id}}">
+            <view class="box_pool_img_container">
+                <image src="{{item.image_url}}" mode="aspectFill" />
+                <view class="new_label" wx:if="{{item.show_new_label}}">
+                    <image src="../../image/newbox.png" mode="scaleToFill" />
+                </view>
+                <view class="{{labelStyle}} font-size-22 font-weight-bold font-color-white">
+                    {{category}}
+                </view>
+            </view>
+            <view class="scroll-item-data font-color-white">
+                <view id="serie-title" class="font-size-26">
+                    {{item.box_name}}
+                </view>
+                <view id="serie-data2">
+                    <view class="font-size-24">
+                        ￥{{item.priceStr}}/抽
+                    </view>
+                    <image wx:if="{{item.label_type}}" src="{{item.label_url}}" mode="scaleToFill" />
+                    <view class="tianchong" wx:if="{{!item.label_type}}">
+
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="scroll-item" wx:if="{{isPool}}" wx:for="{{pools}}" wx:key="index" bindtap="toWXS" data-pool_id="{{item.pool_id}}">
+            <view class="box_pool_img_container">
+                <image src="{{item.image_url}}" mode="scaleToFill" />
+                <view class="new_label" wx:if="{{item.show_new_label}}">
+                    <image src="../../image/newbox.png" mode="scaleToFill" />
+                </view>
+                <view class="{{labelStyle}} font-size-22 font-weight-bold font-color-white">
+                    {{category}}
+                </view>
+            </view>
+            <view class="scroll-item-data font-color-white">
+                <view id="serie-title" class="font-size-26">
+                    {{item.pool_name}}
+                </view>
+                <view id="serie-data2">
+                    <view class="font-size-24">
+                        ￥{{item.priceStr}}/抽
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="width: 100%; height: {{tabBarHeight}}rpx;">
+
+    </view>
+</view>
+
+<!-- <view class="join_club" bindtap="joinClub">
+    <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/join.png" mode="scaleToFill" />
+</view> -->
+
+<!-- <view class="refresh_share">
+    <view class="refresh" catchtap="refresh">
+        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/refresh.png" mode="scaleToFill"/>
+    </view>
+    <button class="share_page" open-type="share">
+    </button>
+</view> -->
+
+<pagepopup appHomePopup="{{joinClubImage}}" canLongPress="{{true}}" wx:if="{{showJoinPage}}" bindtap="hideAppHomePopup"></pagepopup>
+
+<pagepopup appHomePopup="{{normalPopup}}" wx:if="{{normalPopupDisplay}}" bindtap="hideAppHomePopup"></pagepopup>
+
+<pagepopup appHomePopup="{{newUserPopup}}" wx:if="{{newUserPopupDisplay}}" bindtap="receiveNewUserCoupon"></pagepopup>
+
+<!-- <view class="top_padding" style="height: {{menuButtonBottom + 10}}px; background-color: {{top_padding_background_color}};">
+
+</view> 

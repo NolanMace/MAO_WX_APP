@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60rpx;
+}
+
+.form-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.form-label {
+    font-size: 30rpx;
+    width: 180rpx;
+}
+
+picker {
+    flex: 1;
+}
+
+.form-input {
+    flex: 1;
+  }
+
+.divider {
+    height: 1rpx;
+    background-color: #e0e0e0;
+    margin: 10px 0;
+}
+
+.form-switch {
+    margin-left: 10px;
+}
+
+.save-btn {
+    width: 100%;
+    background-color: #d3a859;
+    color: black;
+    border-radius: 20rpx;
+    border: black solid 4rpx;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 100rpx;
+}

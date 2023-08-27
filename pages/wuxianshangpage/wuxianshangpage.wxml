@@ -1,0 +1,274 @@
+<!--pages/wuxianshangpage/wuxianshangpage.wxml-->
+<view class="background">
+
+</view>
+<view class="flex-column-reverse" style="width: 100%; height: {{menuButtonBottom + 1}}px; background-color: #040406; position: fixed; top: 0; z-index: 100;">
+    <image style="margin-left: 20rpx; width: 120rpx; height: 70rpx;" bindtap="back" src="../../image/back.png" mode="scaleToFill" />
+</view>
+
+<!-- 头部 -->
+<view class="head flex-row font-color-white" style="margin-top: {{menuButtonBottom + 10}}px;">
+    <view class="rule_button_container" bindtap="toRulesPage">
+        <image src="../../image/rule.png" mode="scaleToFill" />
+    </view>
+    <view class="shipment_tips_container">
+        <stokenText width="300" stroke="7" text="满一件包邮(非偏远地区)"></stokenText>
+    </view>
+    <view class="series-fengmian">
+        <image src="{{pool.image_url}}" mode="aspectFill"></image>
+    </view>
+    <view class="flex-column series-data-container">
+        <text class="pool_name font-size-30">{{pool.pool_name}}</text>
+        <text class="font-size-26">￥{{pool.pool_price}}/抽</text>
+    </view>
+</view>
+
+<!-- 预览记录按钮区域 -->
+<view id="button-container" class="button-container flex-row flex-center" style="top: {{menuButtonBottom}}px; background-color: {{top_padding_background_color}};">
+    <view class="flex-row">
+        <image class="preview" src="{{show_goods_page ? '../../image/preview.png' : '../../image/previewUnselected.png'}}" mode="scaleToFill" bindtap="selectPreview" />
+        <image class="record" src="{{show_record_page ? '../../image/record.png' : '../../image/recordUnselected.png'}}" mode="scaleToFill" bindtap="selectRecord" />
+    </view>
+</view>
+<!-- 页面容器 -->
+<view class="container1">
+    <!-- 商品页 -->
+    <view class="goods-page" wx:if="{{show_goods_page}}">
+        <view class="award-container flex-column" wx:for="{{result}}">
+            <view class="label-odds flex-row">
+                <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/letter/{{item.product_level}}.png" mode="heightFix" class="level-label-img" />
+                <view class="odds font-size-20 font-color-white">
+                    获得概率：{{item.probability_str}}%
+                </view>
+            </view>
+            <view class="gradientDivider">
+
+            </view>
+            <view class="awards">
+                <view class="award flex-column" wx:for="{{item.products}}" wx:for-item="product" data-itemid="{{product.id}}" bindtap="toDetail">
+                    <image src="{{product.product_image_url}}" mode="scaleToFill" />
+                    <view class="productName font-size-22 font-color-white">
+                        {{product.product_name}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="width: 100%;height: 150rpx;">
+        </view>
+    </view>
+    <!-- 记录页 -->
+    <view class="record-page flex-column" wx:if="{{show_record_page}}">
+        <view wx:for="{{recordsList}}" wx:for-item="awardItem" wx:for-index="awardItemIndex">
+            <view class="{{awardLevelItemStatus}} flex-column" style="height: {{awardItem.expanded ? (140 * awardItem.usersList.length) + 'rpx' : '150rpx'}};">
+                <view wx:for="{{awardItem.usersList}}" wx:key="*this" wx:for-item="user" class="record-item {{user.visible}} flex-row flex-between align-center font-color-white" style="{{user.width}}">
+                    <view class="item-left flex-row">
+                        <image src="{{user.avatar_url}}" mode="scaleToFill" />
+                        <view class="user-data flex-column flex-between">
+                            <view class="user-id font-size-22">
+                                {{user.nickname}}
+                            </view>
+                            <view class="pay-time font-size-20">
+                                {{user.date}}
+                            </view>
+                        </view>
+                    </view>
+                    <view class="item-right">
+                        <!-- <view class="award-level font-size-28 font_weight_bolder">
+                            {{awardItem.product_level}}赏
+                        </view> -->
+                        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/letter/{{awardItem.product_level}}.png" mode="heightFix" class="award-level" />
+                        <view class="award-title font-size-22">
+                            {{user.product_name}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="diver2">
+
+            </view>
+            <view class="unfold-collapse-container">
+                <view class="unfold {{awardItem.expanded ? 'hidden' : ''}}" bindtap="toUnfold" data-buttonSequence="{{awardItemIndex}}">
+                    <image src="../../image/unfold.png" mode="scaleToFill" />
+                </view>
+                <view class="collapse {{awardItem.expanded ? '' : 'hidden'}}" bindtap="toCollapse" data-buttonSequence="{{awardItemIndex}}">
+                    <image src="../../image/collapse.png" mode="scaleToFill" />
+                </view>
+            </view>
+        </view>
+        <view style="width: 100%;height: 150rpx;">
+        </view>
+    </view>
+</view>
+
+<view id="consume-buttons" class="flex-row-around">
+    <view bindtap="showPaymentPane" data-lottery_count="1" class="consum-button">
+        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/payOne.png" mode="scaleToFill" />
+    </view>
+    <view bindtap="showPaymentPane" data-lottery_count="3" class="consum-button">
+        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/payThree.png" mode="scaleToFill" />
+    </view>
+    <view bindtap="showPaymentPane" data-lottery_count="5" class="consum-button">
+        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/payFive.png" mode="scaleToFill" />
+    </view>
+    <view bindtap="showPaymentPane" data-lottery_count="10" class="consum-button">
+        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/payTen.png" mode="scaleToFill" />
+    </view>
+</view>
+
+<view class="refresh_share">
+    <button class="share_page" open-type="share">
+    </button>
+</view>
+<custompopup title="" id="custompopup" class="font-color-white">
+    <view class="good-data flex-column">
+        <view class="intro flex-row">
+            <image src="{{pool.image_url}}" mode="scaleToFill" />
+            <view class="right-area flex-column">
+                <view class="good-title font-size-28">
+                    {{pool.pool_name}}
+                </view>
+                <view class="price flex-column flex-between">
+                    <view class="font-size-24 flex-row">
+                        <view>
+                            名称:
+                        </view>
+                        <view>
+                            明信片
+                        </view>
+                    </view>
+                    <view class="font-size-24 flex-row align-center">
+                        <view>
+                            单价:
+                        </view>
+                        <view class="sum-number" style="color: red;">
+                            ￥{{pool.pool_price}}
+                        </view>
+                    </view>
+                    <view class="font-size-24 flex-row">
+                        <view>
+                            数量:
+                        </view>
+                        <view>
+                            {{lottery_count}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="sum flex-row-reverse align-center">
+            <view class="payment_amount font-size-35 flex-center">
+                ￥{{payment_amount_str}}
+            </view>
+            <view class="top-zongji font-size-24 flex-center">
+                总计:
+            </view>
+            <view class="font-size-24 flex-center">
+                {{lottery_count}}
+            </view>
+            <view class="font-size-24 flex-center">
+                明信片x
+            </view>
+        </view>
+    </view>
+    <view>
+        <view class="check-item flex-row flex-between font-size-28" bindtap="selectMyAddress">
+            <view class="flex-row">
+                <view>
+                    收货地址：
+                </view>
+                <view wx:if="{{isAddressEmpty}}">
+                    点击此处选择地址
+                </view>
+                <view wx:if="{{address}}" class="flex-column">
+                    <view class="flex-row">
+                        {{address.name}}
+                        <view>
+                            {{address.phone_num}}
+                        </view>
+                    </view>
+                    <view>
+                        {{address.region}}{{address.detail_info}}
+                    </view>
+                </view>
+            </view>
+            <view>
+                >
+            </view>
+        </view>
+        <view class="check-item flex-row align-center font-size-24" bindtap="toUseXbean">
+            <view class="unselect_checkbox" wx:if="{{!useXbean}}">
+
+            </view>
+            <image src="../../image/select.png" mode="scaleToFill" wx:if="{{useXbean}}" />
+            <view class="font-size-22">
+                使用仙豆(剩余{{xbean}})
+            </view>
+        </view>
+
+        <view class="check-item flex-row font-size-24" bindtap="agree">
+            <view class="unselect_checkbox" wx:if="{{!agree}}">
+
+            </view>
+            <image src="../../image/select.png" mode="scaleToFill" wx:if="{{agree}}" />
+            <view class="font-size-24" catchtap="toAgreement">本人已满18周岁且具备完全行为能力，充值即代表同意《购买协议》</view>
+        </view>
+        <view class="check-item flex-row-reverse font-size-24" bindtap="toMyCoupons">
+            <view class="flex-row flex-center">
+                使用优惠券抵扣 {{selectedCoupon ? discount_value_str : ''}} >
+            </view>
+        </view>
+        <view class="check-item font-size-24" bindtap="toShipmentRules">
+            《发货须知》
+        </view>
+    </view>
+    <view class="divider2">
+
+    </view>
+    <!-- <view class="check-pay-way font-color-white font-size-34">
+        选择支付方式
+    </view>
+    <view class="weixin-card font-color-white flex-row-between">
+        <view class="font-size-30 flex-row align-center">
+            <image src="../../image/weixin.png" mode="scaleToFill" class="payment-label" />
+            <view class="flex-row flex-center">
+                微信
+            </view>
+            <checkbox class="small-checkbox" value="" />
+        </view>
+        <view class="check-bank font-size-30 flex-row align-center">
+            <image src="../../image/weixin.png" mode="scaleToFill" class="payment-label" />
+            <view class="flex-row flex-center">
+                银行
+            </view>
+            <checkbox class="small-checkbox" value="" />
+        </view>
+    </view> -->
+    <!-- <view class="divider2">
+    </view> -->
+    <view class="sum-sumit flex-row flex-between">
+        <view class="flex-row align-center">
+            <view class="font-size-24">
+                总计:
+            </view>
+            <view class="sum-number2">
+                ￥{{payment_amount_after_discount_str}}
+            </view>
+        </view>
+        <view class="sumit-button flex-row flex-center" bindtap="toPay">
+            <view class="sumitButtonTextContainer">
+                <view class="sumitButtonText sumitButtonTextBorder">
+                    确认支付
+                </view>
+            </view>
+            <view class="sumitButtonTextContainer">
+                <view class="sumitButtonText">
+                    确认支付
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="width: 100%; height: 120rpx;">
+
+    </view>
+</custompopup>
+<viewAwardDetail id="viewAwardDetail" fromPool="{{fromPool}}" awardDetail="{{awardDetail}}"></viewAwardDetail>

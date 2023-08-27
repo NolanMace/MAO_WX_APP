@@ -1,0 +1,40 @@
+<!--pages/addAddress/addAddress.wxml-->
+<view class="background">
+
+</view>
+
+<view class="container font-color-white" style="margin-top: {{menuButtonBottom + 10}}px;">
+    <view class="form-item">
+        <view class="form-label">收货人</view>
+        <input class="form-input" type="text" placeholder="请输入收货人" bindinput="onInputName" value="{{name}}" />
+    </view>
+    <view class="divider"></view>
+
+    <view class="form-item">
+        <view class="form-label">联系电话</view>
+        <input class="form-input" type="number" placeholder="请输入联系电话" bindinput="onInputPhone" value="{{phone_num}}" />
+    </view>
+    <view class="divider"></view>
+
+    <view class="form-item">
+        <view class="form-label">所在地区</view>
+        <picker mode="region" bindchange="regionChange" value="{{regionList}}">
+            <view class="form-input">{{regionList[0]}} {{regionList[1]}} {{regionList[2]}}</view>
+        </picker>
+    </view>
+    <view class="divider"></view>
+
+    <view class="form-item">
+        <view class="form-label">详细地址</view>
+        <input class="form-input" type="text" placeholder="请输入详细地址" bindinput="onInputdetailInfo" value="{{detail_info}}" />
+    </view>
+    <view class="divider"></view>
+
+    <view class="form-item">
+        <view class="save-btn" bindtap="onSave">保存</view>
+    </view>
+</view>
+
+<view class="custom_navigatebar flex-column-reverse" style="height: {{menuButtonBottom}}px;">
+    <image style="margin-left: 20rpx; width: 120rpx; height: 70rpx;" bindtap="back" src="../../image/back.png" mode="scaleToFill" />
+</view>

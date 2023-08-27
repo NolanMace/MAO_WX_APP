@@ -1,0 +1,544 @@
+/* pages/wuxianshangpage/wuxianshangpage.wxss */
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-row-around {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.flex-row-between {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container1 {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back_button {
+    margin-bottom: 15rpx;
+    margin-left: 20rpx;
+}
+
+.rule_button_container {
+    position: absolute;
+    top: 80rpx;
+    right: 15rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.rule_button_container image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.shipment_tips_container {
+    position: absolute;
+    bottom: 20rpx;
+    right: 45rpx;
+    width: 300rpx;
+    height: 100rpx;
+}
+
+.shipment_tips_container image {
+    width: 300rpx;
+    height: 70rpx;
+}
+
+.head {
+    position: relative;
+    width: 635rpx;
+    height: 235rpx;
+    padding: 20rpx;
+    padding-top: 24rpx;
+    align-items: center;
+    border: 8rpx solid black;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/headBg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 30rpx;
+    overflow: hidden;
+    margin: 10rpx auto;
+    flex-shrink: 0;
+}
+
+.series-fengmian {
+    width: 250rpx;
+    height: 183rpx;
+    border: #c50102 solid 5rpx;
+    overflow: hidden;
+    margin-left: 28rpx;
+    margin-bottom: 4rpx;
+}
+
+.series-fengmian>image {
+    width: 250rpx;
+    height: 183rpx;
+}
+
+.series-data-container {
+    height: 210rpx;
+    width: 300rpx;
+    margin-left: 55rpx;
+    justify-content: space-between;
+}
+
+.pool_name {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#button-container {
+    width: 100%;
+    margin-top: 50rpx;
+    margin-bottom: 20rpx;
+    position: sticky;
+}
+
+.preview {
+    width: 185rpx;
+    height: 90rpx;
+    margin: 10rpx;
+}
+
+.record {
+    width: 185rpx;
+    height: 90rpx;
+    margin: 10rpx;
+}
+
+.segment {
+    width: 100%;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    padding-top: 10rpx;
+    padding-bottom: 25rpx;
+}
+
+.segment-button {
+    border: 2rpx solid orange;
+    color: orange;
+    width: 100rpx;
+    height: 50rpx;
+}
+
+.awardlevel-item-collapse {
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.awardlevel-item-unfold {
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.unfold-collapse-container {
+    width: 80rpx;
+    height: 110rpx;
+    position: relative;
+}
+
+.unfold {
+    width: 80rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.unfold image {
+    width: 80rpx;
+    height: 40rpx;
+}
+
+.collapse {
+    width: 80rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.collapse image {
+    width: 80rpx;
+    height: 40rpx;
+}
+
+.hidden {
+    display: none;
+}
+
+.record-item {
+    width: 98%;
+    height: 120rpx;
+    margin: 10rpx auto;
+    background: #35373d;
+    border: #c5c5c5 solid 2rpx;
+    border-radius: 20rpx;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/Asset%20100.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.item-left {
+    align-items: center;
+    margin-left: 10rpx;
+}
+
+.item-left>image {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    border: #c5c5c5 solid 4rpx;
+}
+
+.pay-sequence-container {
+    display: flex;
+    height: 130rpx;
+}
+
+.user-data {
+    height: 75rpx;
+    padding-left: 18rpx;
+}
+
+.user-data .user-id {
+    width: 200rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.item-right {
+    padding-top: 3rpx;
+    height: 75rpx;
+    width: 200rpx;
+    margin: auto 15rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.award-data {
+    align-items: flex-end;
+    margin-right: 15rpx;
+}
+
+.award-level {
+    margin-bottom: 5rpx;
+    height: 30rpx;
+    width: 60rpx;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.award-title {
+    max-width: 200rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.award-container {
+    margin-bottom: 80rpx;
+}
+
+.label-odds {
+    align-items: flex-end;
+}
+
+.label-odds image {
+    height: 40rpx;
+}
+
+.odds {
+    margin-left: 25rpx;
+}
+
+.gradientDivider {
+    width: 350rpx;
+    height: 6rpx;
+    background: linear-gradient(to right, #ffc321, transparent);
+    margin-bottom: 25rpx;
+}
+
+.awards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20rpx;
+    align-items: center;
+    justify-content: center;
+}
+
+.diver2 {
+    width: 100%;
+    height: 3rpx;
+    background-color: #c50101;
+}
+
+.goods-page {
+    margin-top: 10rpx;
+}
+
+.award {
+    width: 160rpx;
+    overflow: hidden;
+}
+
+.award>image {
+    width: 150rpx;
+    height: 150rpx;
+    border: rgb(177, 177, 177) solid 5rpx;
+}
+
+.award .productName {
+    margin: 10rpx;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.level-label-img {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.consumeButtonTextContainer {
+    width: 90rpx;
+    height: 45rpx;
+    position: relative;
+}
+
+.consumeButtonText {
+    position: absolute;
+    text-align: center;
+    font-size: 30rpx;
+    color: white;
+    font-weight: bold;
+    z-index: 3;
+}
+
+.consumeButtonTextBoder {
+    position: absolute;
+    -webkit-text-stroke: 8rpx black;
+    z-index: 2;
+}
+
+.buttons-container2 {
+    width: 70rpx;
+    height: 270rpx;
+    position: absolute;
+    top: 35rpx;
+    right: 30rpx;
+}
+
+.top-right-button {
+    width: 65rpx;
+    height: 65rpx;
+    background-color: orange;
+}
+
+.small-checkbox {
+    transform: scale(0.6);
+    /* 设置大小缩放 */
+}
+
+.good-data {
+    width: 650rpx;
+    height: 270rpx;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30rpx;
+    align-items: center;
+    border-radius: 20rpx;
+    overflow: hidden;
+}
+
+.good-data .intro {
+    width: 650rpx;
+    height: 160rpx;
+    padding-top: 26rpx;
+    padding-bottom: 25rpx;
+    color: black;
+    background-color: #d0d4dd;
+}
+
+.good-data .intro>image {
+    height: 160rpx;
+    width: 160rpx;
+    margin-left: 20rpx;
+    flex-shrink: 0;
+}
+
+.right-area {
+    margin-left: 25rpx;
+    max-width: 420rpx;
+}
+
+.good-title {
+    padding-left: 15rpx;
+    width: 100%;
+    height: 50rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.price {
+    font-size: 24rpx;
+    margin-top: 10rpx;
+    height: 100%;
+}
+
+.sum {
+    width: 650rpx;
+    background: #c50102;
+    padding: 8rpx 0;
+    flex: 1;
+}
+
+.payment_amount {
+    margin-right: 20rpx;
+}
+
+.sum .sum-price {
+    margin-left: 28rpx;
+}
+
+.pay-way {
+    margin-bottom: 20rpx;
+}
+
+.check-pay-way {
+    margin-bottom: 30rpx;
+    margin-top: 40rpx;
+}
+
+.check-item {
+    width: 650rpx;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30rpx;
+}
+
+.check-item image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 15rpx;
+    flex-shrink: 0;
+}
+
+.weixin-card {
+    margin-bottom: 30rpx;
+}
+
+.payment-label {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.check-bank {
+    margin-right: 100rpx;
+}
+
+.sum-sumit {
+    margin-top: 60rpx;
+    margin-bottom: 110rpx;
+}
+
+.top-zongji {
+    margin-left: 25rpx;
+}
+
+.sum-number1 {
+    font-size: 40rpx;
+    color: red;
+}
+
+.sum-number2 {
+    font-size: 40rpx;
+}
+
+.sumit-button {
+    background-color: #c50102;
+    border: black solid 6rpx;
+    border-radius: 20rpx;
+    width: 220rpx;
+    height: 70rpx;
+    position: relative;
+}
+
+.sumitButtonTextContainer {
+    width: 220rpx;
+    height: 70rpx;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sumitButtonText {
+    font-size: 32rpx;
+    font-weight: bolder;
+    color: white;
+}
+
+.sumitButtonTextBorder {
+    -webkit-text-stroke: 10rpx black;
+}
+
+#consume-buttons {
+    width: 95%;
+    position: fixed;
+    left: 20rpx;
+    bottom: 100rpx;
+}
+
+.consum-button {
+    width: 140rpx;
+    height: 70rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.consum-button image {
+    width: 140rpx;
+    height: 70rpx;
+}
+
+#good-title {
+    font-size: 22rpx;
+    color: white;
+}
+
+#pay-page {
+    width: 100%;
+}

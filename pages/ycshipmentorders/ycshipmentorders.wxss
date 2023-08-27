@@ -1,0 +1,116 @@
+/* pages/ycshipmentorders/ycshipmentorders.wxss */
+
+.navigate_container {
+    margin-top: 15rpx;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.navigate_button_container {
+    flex: 1;
+}
+
+.shipment_card {
+    position: relative;
+    color: rgb(224, 222, 222);
+    width: 90%;
+    margin: 30rpx auto;
+    padding: 10rpx 15rpx;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/cardBg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.checkbox {
+    position: absolute;
+    width: 40rpx;
+    height: 40rpx;
+    right: 10rpx;
+    top: 10rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+.checkbox image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.unselect_checkbox {
+    width: 40rpx;
+    height: 40rpx;
+    background-color: white;
+    flex-shrink: 0;
+}
+
+.address_text {
+    margin: 10rpx 0;
+}
+.product_container {
+    width: 100%;
+    margin-top: 15rpx;
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+}
+.product_card {
+    width: 160rpx;
+    margin-right: 15rpx;
+}
+.product_card>image {
+    width: 160rpx;
+    height: 160rpx;
+    border: #c0c0c0 solid 4rpx;
+}
+
+.product_name {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 90%;
+    margin-top: 10rpx;
+    padding-left: 10rpx; 
+    margin-bottom: 10rpx;
+    text-overflow: ellipsis;
+}
+
+.tracking_number {
+    margin-bottom: 10rpx;
+}
+.copy_tracking_number_button {
+    margin-left: 20rpx;
+    border: solid black;
+    border-radius: 15%;
+    font-size: 22rpx;
+}
+.decompose_button_container {
+    width: 100%;
+    margin-top: 30rpx;
+    height: 70rpx;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.decompose_button {
+    width: 150rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: tomato;
+    color: white;
+    font-size: 26rpx;
+    border-radius: 20rpx;
+    border: black solid 4rpx;
+}
+
+.summitButton {
+    position: fixed;
+    bottom: 180rpx;
+    right: 70rpx;
+    width: 220rpx;
+    height: 80rpx;
+    background: #35373d;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/Asset%20100.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: #c5c5c5 solid 4rpx;
+    border-radius: 20rpx;
+}

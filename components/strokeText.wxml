@@ -1,0 +1,13 @@
+<!--components/strokeText.wxml-->
+<view style="position:relative; min-width: {{width}}rpx; height: {{height}}rpx;">
+    <view class="buttonTextContainer">
+        <view class="textStyle" style="font-size: {{fontSize}}rpx; -webkit-text-stroke: {{stroke}}rpx {{strokeColor}};">
+            {{text}}
+        </view>
+    </view>
+    <view class="buttonTextContainer">
+        <view class="textStyle" style="font-size: {{fontSize}}rpx;">
+            {{text}}
+        </view>
+    </view>
+</view>

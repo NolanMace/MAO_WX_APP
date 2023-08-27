@@ -1,0 +1,56 @@
+{
+    "tabBar": {
+        "custom": true,
+        "color": "#999999",
+        "selectedColor": "#007aff",
+        "backgroundColor": "#000000",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "iconPath": "/image/yhq.png",
+                "selectedIconPath": "/image/yhq.png"
+            },
+            {
+                "pagePath": "pages/myshipmentorders/myshipmentorders",
+                "iconPath": "/image/yhq.png",
+                "selectedIconPath": "/image/yhq.png"
+            },
+            {
+                "pagePath": "pages/index3/index3",
+                "iconPath": "/image/yhq.png",
+                "selectedIconPath": "/image/yhq.png"
+            }
+        ]
+    },
+    "window": {
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "首页测试",
+        "navigationStyle": "default",
+        "backgroundColor": "#ffffff",
+        "backgroundTextStyle": "dark"
+    },
+    "pages": [
+        "pages/index/index",
+        "pages/index3/index3",
+        "pages/choushang/choushang",
+        "pages/wuxianshangpage/wuxianshangpage",
+        "pages/myaddress/myaddress",
+        "pages/addAddress/addAddress",
+        "pages/changeBox/changeBox",
+        "pages/myshipmentorders/myshipmentorders",
+        "pages/index3/myrecords/myrecords",
+        "pages/index3/useragreement/useragreement",
+        "pages/index3/mycoupons/mycoupons",
+        "pages/login",
+        "pages/index3/edituserdata",
+        "pages/result/result",
+        "pages/rulesPage/rulesPage",
+        "pages/ycshipment/ycshipment",
+        "pages/ycshipmentorders/ycshipmentorders",
+        "pages/useCoupons/useCoupon",
+        "pages/winbar/winbar"
+    ],
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
+}

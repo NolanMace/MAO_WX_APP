@@ -1,0 +1,20 @@
+<!--components/custompopup.wxml-->
+<view class="half-screen">
+    <!--屏幕背景变暗的背景  -->
+    <view class="background_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+    <!--弹出框  -->
+    <view class="attr-box-down {{showModalStatus ? 'attr-box-up' : ''}} flex-column">
+        <view class="head">
+            <view class="ctTitleContainer">
+                <view class="ctTitleText">{{title}}</view>
+                <view class="ctTitleText ctTitleBorder">{{title}}</view>
+            </view>
+            <view class="back" bindtap="hideModal">
+                <image src="../image/cancel.png" mode="scaleToFill"/>
+            </view>
+        </view>
+        <view class="container">
+            <slot></slot>
+        </view>
+    </view>
+</view>

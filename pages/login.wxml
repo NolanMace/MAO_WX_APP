@@ -1,0 +1,14 @@
+<!--pages/login.wxml-->
+<view class="background">
+
+</view>
+<view style="width: 100%; height: {{menuButtonBottom}}px;">
+    
+</view>
+<view class="logo">
+    <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/logoBG.png" mode="scaleToFill"/>
+</view>
+<button open-type="getPhoneNumber" class="loginButton font-size-36 flex-row flex-center" bindgetphonenumber="getPhoneNumber">点击登录</button>
+<view class="custom_navigatebar flex-column-reverse" style="height: {{menuButtonBottom}}px;">
+    <image style="margin-left: 20rpx; width: 120rpx; height: 70rpx;" bindtap="back" src="../image/back.png" mode="scaleToFill" />
+</view>

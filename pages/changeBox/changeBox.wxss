@@ -1,0 +1,131 @@
+/* pages/changeBox/changeBox.wxss */
+.segment-container {
+    overflow: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50rpx;
+    height: 60rpx;
+    width: 95%;
+    background: #7c0b0b77;
+    border-radius: 40rpx;
+    border: #7c0b0b solid 4rpx;
+}
+.segment-container-zero{
+    overflow: scroll;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50rpx;
+    height: 60rpx;
+    width: 95%;
+    background: #52353577;
+    border-radius: 40rpx;
+    border: #645353 solid 4rpx;
+}
+
+.range-button-unselected {
+    border-radius: 30rpx;
+    padding: 10rpx 30rpx;
+    margin-right: 30rpx;
+    height: 43rpx;
+    font-size: 30rpx;
+}
+
+.range-button-selected {
+    border-radius: 30rpx;
+    padding: 10rpx 30rpx;
+    margin-right: 30rpx;
+    height: 43rpx;
+    font-size: 30rpx;
+    background: #7d0b0b;
+}
+
+.box-item-container {
+    position: relative;
+    width: 680rpx;
+    border: 2rpx #d3a859 solid;
+    background: #3e0c0b;
+    padding-top: 20rpx;
+    padding-bottom: 35rpx;
+    margin-bottom: 30rpx;
+    border-radius: 25rpx;
+    overflow: hidden;
+}
+.box-item-container-zero {
+    position: relative;
+    width: 680rpx;
+    border: 2rpx #d3a859 solid;
+    background: #555252;
+    padding-top: 20rpx;
+    padding-bottom: 35rpx;
+    margin-bottom: 30rpx;
+    border-radius: 25rpx;
+    overflow: hidden;
+}
+
+.trapezoid {
+    color: #3c0808;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 35rpx;
+    padding-left: 20rpx;
+    padding-right: 40rpx;
+    background-color: #fec868;
+    clip-path: polygon(0% 0%, 100% 0%, 76% 100%, 0% 100%);
+}
+
+.box-item {
+    width: 90%;
+}
+
+.box-image {
+    width: 190rpx;
+    height: 170rpx;
+    margin-right: 20rpx;
+}
+
+.box_image {
+    width: 230rpx;
+    height: 190rpx;
+    position: absolute;
+    bottom: 50rpx;
+    left: 0;
+}
+
+.box-image image {
+    height: 100%;
+    width: 100%;
+}
+
+.awardItem-container {
+    flex: 1;
+}
+
+.award-item {
+    width: 190rpx;
+}
+
+
+.overlay {
+    position: relative;
+  }
+  
+.overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 透明黑布的颜色和透明度 */
+    pointer-events: none; /* 使透明布局不阻挡底层元素的交互 */
+  }
+
+  .sold-out-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 680rpx;
+    height:  100%;
+  }

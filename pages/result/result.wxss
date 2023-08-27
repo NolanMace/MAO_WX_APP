@@ -1,0 +1,113 @@
+/* pages/result/result.wxss */
+.title {
+    margin: 0 auto;
+    width: 250rpx;
+    height: 50rpx;
+    position: relative;
+}
+
+.titleTextContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleText {
+    color: white;
+    font-size: 48rpx;
+    font-weight: bolder;
+}
+
+.textBorder {
+    -webkit-text-stroke: 10rpx black;
+}
+
+.result_grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 40rpx;
+    justify-items: center;
+    align-items: center;
+    padding-top: 40rpx;
+}
+
+.result_card {
+    width: 130rpx;
+    height: 175rpx;
+}
+
+.image_container {
+    width: 130rpx;
+    height: 130rpx;
+    position: relative;
+    border: rgb(216, 216, 216) solid 4rpx;
+}
+
+.image_container image {
+    width: 100%;
+    height: 100%;
+}
+
+.levelLabelContainer {
+    bottom: 0;
+    right: 0;
+    min-width: 30rpx;
+    height: 28rpx;
+    position: absolute;
+}
+
+.levelLabel {
+    display: flex;
+    flex-direction: row-reverse;
+    min-width: 40rpx;
+    height: 28rpx;
+    padding-right: 10rpx;
+    padding-left: 45rpx;
+    background: linear-gradient(to right, transparent, #c50101);
+    color: white;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.result_name {
+    font-size: 22rpx;
+    width: 100%;
+    margin: 10rpx 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+}
+
+.button_container {
+    position: fixed;
+    bottom: 250rpx;
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 600rpx;
+    height: 80rpx;
+}
+
+.button {
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/cardBg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 160rpx;
+    height: 80rpx;
+}

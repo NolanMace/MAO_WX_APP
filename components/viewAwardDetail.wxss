@@ -1,0 +1,30 @@
+/* components/viewAwardDetail.wxss */
+.container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    background-color: black;
+    z-index: 100;
+}
+
+.swiper-item-image {
+    width: 700rpx;
+    height: 700rpx;
+    margin-bottom: 20rpx;
+}
+
+swiper {
+    height: 770rpx;
+    width: 700rpx;
+}
+
+swiper-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+      "pagepopup": "../../components/pagepopup",
+      "custom-tab-bar": "/custom-tab-bar/index",
+      "stokenText": "../../components/strokeText"
+  }
+}

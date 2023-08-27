@@ -1,0 +1,53 @@
+/* pages/myaddress/myaddress.wxss */
+.myaddresslabel_container {
+    width: 230rpx;
+    height: 110rpx;
+}
+
+.default_address_text {
+    margin-bottom: 15rpx;
+}
+
+.address-container {
+    min-height: 200rpx;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 120rpx;
+}
+
+.address-item {
+    border: 2rpx #d3a859 solid;
+    background: #3e0c0b;
+    border-radius: 20rpx;
+    margin: 70rpx 0;
+    padding: 35rpx 30rpx;
+}
+
+.circular {
+    width: 35rpx;
+    height: 35rpx;
+    border-radius: 50%;
+    margin-right: 15rpx;
+}
+
+.change-delete-button-container {
+    width: 180rpx;
+    height: 50rpx;
+}
+
+.change-delete-button {
+    width: 80rpx;
+    height: 40rpx;
+    border: 2rpx solid #d3a859;
+}
+
+.add-address-button {
+    width: 95%;
+    height: 70rpx;
+    margin: 10rpx auto;
+    background-color: #d3a859;
+    color: black;
+    border-radius: 20rpx;
+    border: black solid 4rpx;
+}

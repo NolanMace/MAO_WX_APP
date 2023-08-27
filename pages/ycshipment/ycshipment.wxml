@@ -1,0 +1,56 @@
+<!--pages/ycshipment/ycshipment.wxml-->
+<view class="background">
+
+</view>
+
+<view style="width: 100%; height: {{menuButtonBottom}}px;">
+
+</view>
+
+<view class="addressCard flex-row flex-center font-color-white">
+    <view class="flex-row align-center" style="width: 550rpx;">
+        <image class="addressIcon" src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/address.png" mode="scaleToFill" />
+        <view>
+            <view class="flex-row align-center marginBottom">
+                <view class="font-size-30 marginLeft">{{address.name}}</view>
+                <view class="font-size-26 marginLeft">{{address.phone}}</view>
+            </view>
+            <view class="font-size-22 marginLeft">{{address.detail}}</view>
+        </view>
+    </view>
+</view>
+
+<view class="marginLeftP marginBottom flex-row align-center font-size-30">
+    <view class="font-color-white">
+        云仓发货价格：
+    </view>
+    <view style="color: #d3a859;">
+        {{priceStr}}仙豆
+    </view>
+</view>
+
+<view class="result_grid">
+    <view class="result_card" wx:for="{{products}}">
+        <view class="image_container">
+            <image src="{{item.product_image_url}}" mode="scaleToFill" />
+            <view class="levelLabelContainer">
+                <view class="levelLabel font-size-20 font_weight_bolder">
+                    {{item.product_level}}赏
+                </view>
+            </view>
+        </view>
+        <view class="result_name">
+            {{item.product_name}}
+        </view>
+    </view>
+</view>
+
+<view class="summitButtonContainer flex-row flex-center">
+    <view class="summitButton flex-row flex-center font-size-28" bindtap="decompose">
+        <stokenText text="立即发货" stroke="6" fontSize="30"></stokenText>
+    </view>
+</view>
+
+<view class="custom_navigatebar flex-column-reverse" style="height: {{menuButtonBottom}}px;">
+    <image style="margin-left: 20rpx; width: 120rpx; height: 70rpx;" bindtap="back" src="../../image/back.png" mode="scaleToFill" />
+</view>

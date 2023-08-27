@@ -1,0 +1,14 @@
+<!--components/pagepopup.wxml-->
+<view class="background_screen">
+    
+</view>
+<view class="popup_container" bindtap="back">
+    <view class="cancel_button_container">
+        <view class="cancel_button">
+            x
+        </view>
+    </view>
+    <view class="image_container">
+        <image src="{{appHomePopup}}" show-menu-by-longpress="{{canLongPress}}" mode="widthFix"/>
+    </view>
+</view>

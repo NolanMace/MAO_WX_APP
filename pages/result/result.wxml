@@ -1,0 +1,55 @@
+<!--pages/result/result.wxml-->
+<view class="background">
+
+</view>
+
+<view style="width: 100%; height: {{menuButtonBottom}}px;">
+
+</view>
+
+<view class="title">
+    <view class="titleTextContainer">
+        <view class="titleText textBorder">
+            恭喜你获得
+        </view>
+    </view>
+    <view class="titleTextContainer">
+        <view class="titleText">
+            恭喜你获得
+        </view>
+    </view>
+</view>
+
+<view class="result_grid">
+    <view class="result_card" wx:for="{{products}}">
+        <view class="image_container">
+            <image src="{{item.product_image_url}}" mode="scaleToFill" />
+            <view class="levelLabelContainer">
+                <view class="levelLabel font-size-20 font_weight_bolder">
+                    {{item.product_level}}赏
+                </view>
+            </view>
+        </view>
+        <view class="result_name">
+            {{item.product_name}}
+        </view>
+    </view>
+</view>
+
+<view class="button_container">
+    <view class="button_container2">
+        <!-- <view class="button" bindtap="toYcShipment">
+            <stokenText height="80" fontSize="28" stroke="6" text="云仓发货"></stokenText>
+        </view> -->
+        <view class="button" bindtap="toMyShipment">
+            <stokenText height="80" fontSize="28" stroke="6" text="我的赏柜"></stokenText>
+        </view>
+        <view class="button" bindtap="back">
+            <stokenText height="80" fontSize="28" stroke="6" text="继续抽赏"></stokenText>
+        </view>
+    </view>
+</view>
+
+<view class="custom_navigatebar flex-column-reverse" style="height: {{menuButtonBottom}}px;">
+    <image style="margin-left: 20rpx; width: 120rpx; height: 70rpx;" bindtap="back" src="../../image/back.png" mode="scaleToFill" />
+</view>

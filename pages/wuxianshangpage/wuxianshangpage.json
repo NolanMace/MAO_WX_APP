@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "custompopup": "../../components/custompopup",
+        "viewAwardDetail": "../../components/viewAwardDetail",
+        "stokenText": "../../components/strokeText"
+    }
+}

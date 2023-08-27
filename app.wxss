@@ -1,0 +1,257 @@
+/**app.wxss**/
+
+.font-color-white {
+    color: white;
+}
+
+.font-color-red {
+    color: red;
+}
+
+.font-color-gray {
+    color: #979797;
+}
+
+.absolute-position {
+    position: absolute;
+}
+
+.relative-position {
+    position: relative;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.flex-between {
+    justify-content: space-between;
+}
+
+.flex-around {
+    justify-content: space-around;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.font-size-14 {
+    font-size: 14rpx;
+    font-weight: lighter;
+}
+
+.font-size-16 {
+    font-size: 16rpx;
+    font-weight: lighter;
+}
+
+.font-size-18 {
+    font-size: 18rpx;
+    font-weight: lighter;
+}
+
+.font-size-20 {
+    font-size: 20rpx;
+}
+
+.font-size-22 {
+    font-size: 22rpx;
+}
+
+.font-size-22-lighter {
+    font-size: 22rpx;
+    font-weight: lighter;
+}
+
+.font-size-24 {
+    font-size: 24rpx;
+}
+
+.font-size-24-lighter {
+    font-size: 24rpx;
+    font-weight: lighter;
+}
+
+.font-size-26 {
+    font-size: 26rpx;
+}
+
+.font-size-28 {
+    font-size: 28rpx;
+}
+
+.font-size-30 {
+    font-size: 30rpx;
+}
+
+.font-size-32 {
+    font-size: 32rpx;
+}
+
+.font-size-34 {
+    font-size: 34rpx;
+}
+
+.font-size-35 {
+    font-size: 35rpx;
+}
+
+.font-size-36 {
+    font-size: 36rpx;
+}
+
+.font-size-38 {
+    font-size: 38rpx;
+}
+
+.font-size-40 {
+    font-size: 40rpx;
+}
+
+.font-size-50 {
+    font-size: 50rpx;
+}
+
+.font-size-54 {
+    font-size: 54rpx;
+}
+
+.font-weight-bold{
+    font-weight: bold;
+}
+
+.font_weight_bolder {
+    font-weight: bolder;
+}
+
+.divider {
+    width: 100%;
+    height: 5rpx;
+    background-color: white;
+}
+
+.gray_divider {
+    width: 100%;
+    height: 5rpx;
+    background-color: gray;
+}
+
+.divider2 {
+    width: 100%;
+    height: 5rpx;
+    background-color: white;
+    margin: auto 0;
+}
+
+.appbar {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: #040406;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.appbar_image {
+    width: 180rpx;
+    height: 60rpx;
+    margin-left: 30rpx;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.custom_navigatebar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-shrink: 0;
+    background-color: #030305;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/background.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.toLoginButton {
+    width: 400rpx;
+    height: 80rpx;
+    background-color: #c50101;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 400rpx;
+    color: white;
+    font-weight: bold;
+} 
+
+.refresh_share {
+    width: 80rpx;
+    position: fixed;
+    right: 20rpx;
+    bottom: 300rpx;
+    display: flex;
+    flex-direction: column;
+}
+.refresh {
+    height: 80rpx;
+    width: 80rpx;
+    margin-bottom: 60rpx;
+}
+.refresh image {
+    height: 100%;
+    width: 100%;
+}
+.share_page {
+    height: 80rpx;
+    width: 80rpx;
+    background-size: 80rpx 80rpx;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/share.png');
+}
+.share_page image {
+    height: 100%;
+    width: 100%;
+}
+
+.unselect_checkbox {
+    width: 30rpx;
+    height: 30rpx;
+    background-color: white;
+    border-radius: 5rpx;
+    margin-right: 15rpx;
+    flex-shrink: 0;
+}

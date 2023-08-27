@@ -1,0 +1,83 @@
+<!--pages/myaddress/myaddress.wxml-->
+<view class="background">
+
+</view>
+
+<view style="width: 100%; height: {{menuButtonBottom + 10}}px;">
+    
+</view>
+
+<view class="myaddresslabel_container flex-row flex-center">
+    <navigateRadiusButton id="myaddresslabel" buttonText='我的地址'></navigateRadiusButton>
+</view>
+
+<view wx:if="{{!isLoggen}}" class="toLoginButton font-size-34 flex-row flex-center" bindtap="toLogin">
+    登录查看内容
+</view>
+<view class="address-container font-color-white" wx:if="{{isLoggen}}">
+    <view class="address-item" bindtap="back" wx:if="{{hasDefaultAddress}}">
+        <view class="font-size-28 default_address_text">
+            默认地址
+        </view>
+        <view class="flex-row font-size-32" style="margin-bottom: 20rpx;">
+            <view>
+                {{defaultAddress.name}}
+            </view>
+            <view>
+                {{defaultAddress.phone_num}}
+            </view>
+        </view>
+        <view class="font-size-26" style="margin-bottom: 22rpx;">
+            {{defaultAddress.region}}
+        </view>
+        <view class="font-size-26" style="margin-bottom: 22rpx;">
+            {{defaultAddress.detail_info}}
+        </view>
+        <view class="divider">
+
+        </view>
+    </view>
+    <view class="address-item" wx:for="{{addressList}}">
+        <view bindtap="selectAddress" data-index="{{index}}">
+            <view class="flex-row font-size-32" style="margin-bottom: 20rpx;">
+                <view>
+                    {{item.name}}
+                </view>
+                <view>
+                    {{item.phone_num}}
+                </view>
+            </view>
+            <view class="font-size-26" style="margin-bottom: 22rpx;">
+                {{item.region}}
+            </view>
+            <view class="font-size-26" style="width: 100%;margin-bottom: 22rpx;word-wrap: break-word;">
+                {{item.detail_info}}
+            </view>
+            <view class="divider" style="margin-bottom: 30rpx;">
+
+            </view>
+        </view>
+        <view class="flex-row flex-between align-center font-size-22">
+            <view class="flex-row align-center" bindtap="setAddressAsDefault" data-index="{{index}}">
+                <view style="color: white;">
+                    设为默认
+                </view>
+            </view>
+            <view class="change-delete-button-container flex-row flex-between">
+                <view class="change-delete-button flex-row flex-center" style="color: white;" bindtap="updateAddress" data-index="{{index}}">
+                    修改
+                </view>
+                <view class="change-delete-button flex-row flex-center" style="color: white;" bindtap="deleteAddress" data-index="{{index}}">
+                    删除
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="add-address-button flex-row flex-center font-size-30" bindtap="addNewAddress" wx:if="{{isLoggen}}">
+    添加新地址
+</view>
+
+<view class="custom_navigatebar flex-column-reverse" style="height: {{menuButtonBottom}}px;">
+    <image style="margin-left: 20rpx; width: 120rpx; height: 70rpx;" bindtap="back" src="../../image/back.png" mode="scaleToFill" />
+</view>

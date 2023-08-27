@@ -1,0 +1,79 @@
+<!--pages/ycshipmentorders/ycshipmentorders.wxml-->
+<view class="background">
+
+</view>
+<view class="flex-row navigate_container" style="margin-top: {{menuButtonBottom + 10}}px;">
+    <view class="flex-row flex-center navigate_button_container">
+        <navigateRadiusButton data-index="0" id="unDeliveredShipmentOrdersButton" buttonText="未发货" width="140rpx" height="65rpx" bindtap="clickNavigateButton"></navigateRadiusButton>
+    </view>
+    <view class="flex-row flex-center navigate_button_container">
+        <navigateRadiusButton data-index="3" id="uncomposedShipmentOrdersButton" buttonText="已发货" width="140rpx" height="65rpx" bindtap="clickNavigateButton"></navigateRadiusButton>
+    </view>
+</view>
+
+<view wx:if="{{!isLoggen}}" class="toLoginButton font-size-34 flex-row flex-center" bindtap="toLogin">
+    登录查看内容
+</view>
+
+<view wx:if="{{isLoggen}}">
+    <view wx:for="{{shipmentOrders}}" class="font-size-26 shipment_card" wx:if="{{selectUndelivered}}" wx:key="shipment_order_id" data-index="{{index}}" bindtap="selectShipment">
+        <view class="checkbox">
+            <view class="unselect_checkbox" wx:if="{{!item.isSelected}}">
+
+            </view>
+            <image src="../../image/select.png" mode="scaleToFill" wx:if="{{item.isSelected}}"/>
+        </view>
+        <view>
+            运输地址：
+        </view>
+        <view class="address_text">
+            <text selectable="true" style="display: block;">{{item.shipment_address}}</text>
+        </view>
+        <view>
+            商品件数：{{item.user_shipment_product_items==null ? 0 : item.user_shipment_product_items.length}}件
+        </view>
+        <view class="product_container">
+            <view class="product_card flex-column" wx:for="{{item.user_shipment_product_items}}" wx:for-item="product" wx:key="*this">
+                <image src="{{product.product_image}}" mode="scaleToFill" />
+                <view class="product_name">
+                    {{product.product_level}}赏 {{product.product_name}}
+                </view>
+            </view>
+        </view>
+        <!-- <view class="decompose_button_container">
+            <view class="decompose_button" bindtap="decompose" data-id="{{item.shipment_order_id}}">
+                分解为仙豆
+            </view>
+        </view> -->
+    </view>
+</view>
+
+<view wx:if="{{isLoggen}}">
+    <view wx:for="{{shipmentOrders}}" class="font-size-26 shipment_card" wx:if="{{selectUncomposed}}" wx:key="shipment_order_id">
+        <view>
+            商品件数：{{item.user_shipment_product_items==null ? 0 : item.user_shipment_product_items.length}}件
+        </view>
+        <view class="product_container">
+            <view class="product_card flex-column" wx:for="{{item.user_shipment_product_items}}" wx:for-item="product" wx:key="*this">
+                <image src="{{product.product_image}}" mode="scaleToFill" />
+                <view class="product_name">
+                    {{product.product_level}}赏 {{product.product_name}}
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view wx:if="{{isLoggen}}">
+    <view class="summitButton flex-row flex-center" bindtap="toYcPage">
+        <stokenText text="点击发货" fontSize="28" strokeColor="black"></stokenText>
+    </view>
+</view>
+
+<view style="width: 100rpx; height: 100rpx;">
+
+</view>
+
+<view class="custom_navigatebar flex-column-reverse" style="height: {{menuButtonBottom}}px;">
+    <image style="margin-left: 20rpx; width: 120rpx; height: 70rpx;" bindtap="back" src="../../image/back.png" mode="scaleToFill" />
+</view>

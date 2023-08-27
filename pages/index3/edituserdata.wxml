@@ -1,0 +1,21 @@
+<!--pages/index3/edituserdata.wxml-->
+<view class="background">
+
+</view>
+
+<view style="width: 100%; height: {{menuButtonBottom + 10}}px;">
+
+</view>
+
+<button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" style="height: 200rpx; width: 220rpx;background-color: transparent;">
+    <image class="avatar" src="{{avatarUrl}}" mode="scaleToFill"></image>
+</button>
+
+<form bindsubmit="formsubmit" class="nickname_form">
+    <input type="nickname" placeholder="请输入昵称" name="nickname" class="nickname" />
+    <button form-type="submit" type="primary" class="submit" style="background: #760000;">提交</button>
+</form>
+
+<view class="custom_navigatebar flex-column-reverse" style="height: {{menuButtonBottom}}px;">
+    <image style="margin-left: 20rpx; width: 120rpx; height: 70rpx;" bindtap="back" src="../../image/back.png" mode="scaleToFill" />
+</view>

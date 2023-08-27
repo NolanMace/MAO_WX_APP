@@ -1,0 +1,54 @@
+/* components/pagepopup.wxss */
+.popup_container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.background_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.6;
+    z-index: 1000;
+}
+
+.image_container {
+    max-height: 45%;
+    width: 80%;
+    overflow-y: scroll;
+}
+
+.image_container>image {
+    width: 100%;
+}
+
+.cancel_button_container {
+    width: 80%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.cancel_button {
+    border: white solid 5rpx;
+    border-radius: 50%;
+    width: 60rpx;
+    height: 53rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40rpx;
+    padding-bottom: 10rpx;
+}
+

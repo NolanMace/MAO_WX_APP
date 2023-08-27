@@ -1,0 +1,461 @@
+/**index.wxss**/
+
+.search-container {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    padding: 10rpx 20rpx;
+    border: black solid 4rpx;
+    border-radius: 40rpx;
+    overflow: hidden;
+}
+
+.search-left {
+    flex: 2;
+}
+
+.search-left image {
+    width: 48rpx;
+    height: 48rpx;
+    padding: 10rpx 20rpx 10rpx 10rpx;
+    vertical-align: middle;
+}
+
+.search-left input {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 88rpx);
+}
+
+@keyframes move {
+    0% {
+        bottom: 450rpx;
+    }
+
+    50% {
+        bottom: 470rpx;
+    }
+
+    100% {
+        bottom: 450rpx;
+    }
+}
+
+.join_club {
+    width: 100rpx;
+    height: 130rpx;
+    position: fixed;
+    right: 10rpx;
+    animation: move 2s ease-in-out infinite;
+}
+
+.join_club image {
+    width: 100rpx;
+    height: 130rpx;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* .refresh_share {
+    width: 80rpx;
+    position: fixed;
+    right: 20rpx;
+    bottom: 300rpx;
+    display: flex;
+    flex-direction: column;
+}
+.refresh {
+    height: 80rpx;
+    width: 80rpx;
+    margin-bottom: 60rpx;
+}
+.refresh image {
+    height: 100%;
+    width: 100%;
+}
+.share_page {
+    height: 80rpx;
+    width: 80rpx;
+    background-size: 80rpx 80rpx;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    background-image: url(https://yfsmax.oss-cn-hangzhou.aliyuncs.com/share.png);
+}
+.share_page image {
+    height: 100%;
+    width: 100%;
+} */
+
+.swiper {
+    width: 680rpx;
+    height: 420rpx;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30rpx;
+    overflow: hidden;
+    box-shadow: black 4rpx 6rpx 10rpx 4rpx;
+}
+
+.swiper_item_image {
+    width: 680rpx;
+    height: 420rpx;
+}
+
+.dots {
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots view {
+    width: 20rpx;
+    height: 10rpx;
+    margin: 0 6rpx;
+    border-radius: 5rpx;
+    background-color: #8f8f8e;
+}
+
+.dots .active {
+    width: 50rpx;
+    background-color: #c50102;
+    transition: width 0.3s ease;
+}
+
+.laxin {
+    width: 100%;
+    height: 200rpx;
+    background-color: cadetblue;
+}
+
+.shipment_notice {
+    width: 90%;
+    margin-top: 20rpx;
+    margin-left: auto;
+    margin-right: auto;
+    border: #c50102 solid 8rpx;
+    overflow: hidden;
+}
+
+.shipment_notice_fold {
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.shipment_notice image {
+    width: 100%;
+    height: 165rpx;
+}
+
+.fold_container {
+    width: 90%;
+    height: 40rpx;
+    display: flex;
+    margin-top: 10rpx;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fold_container image {
+    width: 80rpx;
+    height: 40rpx;
+}
+
+.navigation {
+    height: 140rpx;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navigation_item_container {
+    flex: 1;
+}
+
+.top_padding {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navigation-item {
+    width: 220rpx;
+    height: 110rpx;
+    opacity: 0.6;
+}
+
+.navigation-item.active {
+    opacity: 1;
+}
+
+.scroll-view {
+    margin-top: 20rpx;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 25rpx 20rpx;
+}
+
+.scroll-item {
+    width: 330rpx;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.scroll-item-data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url(https://yfsmax.oss-cn-hangzhou.aliyuncs.com/huidi.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.box_pool_img_container {
+    width: 320rpx;
+    height: 250rpx;
+    position: relative;
+}
+
+.box_pool_img_container>image {
+    width: 100%;
+    height: 100%;
+    border: #c50101 solid 6rpx;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.new_label {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    bottom: 9rpx;
+    left: 20rpx;
+    overflow: hidden;
+    animation: scale 2s ease-in-out infinite;
+}
+
+.new_label image {
+    width: 100%;
+    height: 100%;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.pre_sale_label {
+    width: 65rpx;
+    height: 40rpx;
+    position: absolute;
+    bottom: 9rpx;
+    right: 10rpx;
+    background: #fdd000;
+    border-radius: 15rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#serie-title {
+    margin-top: 20rpx;
+    margin-left: 6rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#serie-data2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 340rpx;
+    margin-top: 10rpx;
+    margin-left: 5rpx;
+    margin-bottom: 5rpx;
+}
+
+#serie-data2 image {
+    height: 45rpx;
+    width: 90rpx;
+    margin-right: 22rpx;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.tianchong {
+    height: 45rpx;
+    width: 90rpx;
+    margin-right: 22rpx;
+}
+
+/* .yifan_label {
+    height: 50rpx;
+    width: 90rpx;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 25rpx;
+}
+
+.yifan_label::before {
+    content: "";
+    height: 44rpx;
+    width: 85%;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    left: 6rpx;
+    background-color: rgb(255, 135, 55);
+    position: absolute;
+    z-index: -1;
+}
+
+.dq_label {
+    height: 50rpx;
+    width: 90rpx;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 25rpx;
+}
+
+.dq_label::before {
+    content: "";
+    height: 44rpx;
+    width: 85%;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    left: 6rpx;
+    background-color: rgb(255, 135, 55);
+    position: absolute;
+    z-index: -1;
+}
+
+.wuxian_label {
+    height: 50rpx;
+    width: 90rpx;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 25rpx;
+}
+
+.wuxian_label::before {
+    content: "";
+    height: 44rpx;
+    width: 85%;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    left: 6rpx;
+    background-color: rgb(255, 135, 55);
+    position: absolute;
+    z-index: -1;
+} */
+.yifan_label {
+    height: 40rpx;
+    width: 100rpx;
+    padding-left: 10rpx;
+    position: absolute;
+    top: 9rpx;
+    right: 0;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/label.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.dq_label {
+    height: 40rpx;
+    width: 100rpx;
+    padding-left: 10rpx;
+    position: absolute;
+    top: 9rpx;
+    right: 0;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/label.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.wuxian_label {
+    height: 40rpx;
+    width: 100rpx;
+    padding-left: 10rpx;
+    position: absolute;
+    top: 9rpx;
+    right: 0;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/label.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.windowbars_container {
+    width: 700rpx;
+    height: 160rpx;
+    margin-bottom: 15rpx;
+    margin-top: 15rpx;
+    overflow-x: scroll;
+}
+
+.windowbars_container::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.windowbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 150rpx;
+    width: 110rpx;
+    margin-right: 30rpx;
+    flex-shrink: 0;
+}
+
+.imageView {
+    position: relative;
+    height: 110rpx;
+    width: 110rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.winbar_bg {
+    position: absolute;
+    bottom: 0;
+    height: 110rpx;
+    width: 110rpx;
+    border-radius: 15rpx;
+}
+
+.winbar_pp {
+    position: absolute;
+    bottom: 0;
+    right: 10rpx;
+    height: 100rpx;
+    width: 60rpx;
+}

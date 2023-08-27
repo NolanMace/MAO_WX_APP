@@ -1,0 +1,286 @@
+<!--pages/choushang/choushang.wxml-->
+<view class="flex-column-reverse" style="width: 100%; height: {{menuButtonBottom + 1}}px; position: fixed; top: 0; z-index: 100; background-color: #040406;">
+    <image style="margin-left: 20rpx; width: 120rpx; height: 70rpx;" bindtap="back" src="../../image/back.png" mode="scaleToFill" />
+</view>
+
+<view class="container font-color-white flex-column relative-position">
+    <!-- 头部 -->
+    <view class="head flex-row" style="margin-top: {{menuButtonBottom + 10}}px;">
+        <view class="rule_button_container" bindtap="toRulesPage">
+            <image src="../../image/rule.png" mode="scaleToFill" />
+        </view>
+        <view class="box-number-bg">
+            <!-- <stokenText width="70" text="第{{box_number}}箱"></stokenText> -->
+        </view>
+        <view class="box-number">
+            <view class="box-number-container">
+                <view class="box-number-stroke">
+                    第{{box_number}}箱
+                </view>
+                <view class="box-number-text">
+                    第{{box_number}}箱
+                </view>
+            </view>
+        </view>
+        <view class="shipment_tips_container">
+            <stokenText stroke="6" width="300" text="满一件包邮(非偏远地区)"></stokenText>
+        </view>
+        <view class="flex-column series-fengmian">
+            <image src="{{box_instance.image_url}}" mode="aspectFill"></image>
+        </view>
+        <view class="flex-column series-data-container font-weight-bold">
+            <view class="box_name font-size-28">{{box_instance.box_name}}</view>
+            <text class="font-size-24">零售价:￥{{box_instance.box_price}}</text>
+        </view>
+    </view>
+
+    <!-- 换箱 -->
+    <view id="button-container1" class="flex-row flex-center">
+        <image class="preview" src="{{show_goods_page ? '../../image/preview.png' : '../../image/previewUnselected.png'}}" mode="scaleToFill" bindtap="selectPreview" />
+        <image class="record" src="{{show_record_page ? '../../image/record.png' : '../../image/recordUnselected.png'}}" mode="scaleToFill" bindtap="selectRecord" />
+        <view class="switchBoxButtonContainer" bindtap="toChangeBoxPage">
+            <view class="switchBoxButton">
+                <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/changebox_icon.png" mode="scaleToFill" />
+            </view>
+        </view>
+    </view>
+    <!-- 上下箱 -->
+    <view class="button-container2 flex-row flex-center">
+        <view class="flex-row flex-center">
+            <view class="font-size-28 font-weight-bold">
+                本箱还剩
+            </view>
+            <view id="remain-num">
+                {{box_instance.left_num}}
+            </view>
+            <view class="font-size-28 font-weight-bold">
+                /{{box_instance.total_num}}
+            </view>
+        </view>
+    </view>
+
+    <!-- 页面容器 -->
+    <view class="container1">
+        <!-- 商品页 -->
+        <view class="goods-page flex-column" wx:if="{{show_goods_page}}">
+            <view>
+
+            </view>
+            <view class="awards-page">
+                <view class="good-label flex-column" bindtap="toDetail" wx:for="{{box_instance.box_item_counts}}" data-index="{{index}}">
+                    <view class="box-item-cover relative-position">
+                        <image src="{{item.product_image_url}}" mode="scaleToFill" />
+                        <view class="product_number_container absolute-position">
+                            <view class="product_number">
+                                {{item.product_left_count}}/{{item.product_total_count}}
+                            </view>
+                        </view>
+                        <view class="product_level absolute-position">
+                            {{item.product_level}}赏
+                        </view>
+                    </view>
+                    <view class="productNameAndCount">
+                        <view class="productName font-size-24">
+                            {{item.product_name}}
+                        </view>
+                        <view wx:if="{{item.showDetail}}">
+                            <view class="font-size-20 product_odds" wx:if="{{item.isNormal}}">
+                                概率:{{item.odds}}%
+                            </view>
+                            <view class="font-size-20" style="color: transparent;" wx:if="{{!item.isNormal}}">
+                                非卖品
+                            </view>
+                        </view>
+                        <view class="product_price">
+                            参考价￥{{box_instance.box_price}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view style="width: 100%;height: 180rpx;">
+            </view>
+        </view>
+        <!-- 记录页 -->
+        <view class="record-page flex-column" wx:if="{{show_record_page}}">
+            <view class="flex-column flex-center">
+                <view class="record-item flex-row flex-between" wx:for="{{records}}">
+                    <view class="item-left flex-row">
+                        <image src="{{item.avatar_url}}" mode="" />
+                        <view class="user-data flex-column flex-between">
+                            <view class="user-id font-size-24">
+                                {{item.nickname}}
+                            </view>
+                            <view class="pay-time font-size-20">
+                                {{item.date}}
+                            </view>
+                        </view>
+                    </view>
+                    <view class="item-right">
+                        <image wx:if="{{!item.containsNumber}}" src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/letter/{{item.product_level}}.png" mode="heightFix" class="award-level" />
+                        <view class="award-level font-size-30 font-weight-bold" wx:if="{{item.containsNumber}}">{{item.product_level}}赏</view>
+                        <view class="award-title font-size-22">
+                            {{item.product_name}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view style="width: 100%;height: 180rpx;">
+            </view>
+        </view>
+    </view>
+</view>
+<view id="consume-buttons" class="flex-row flex-around">
+    <view bindtap="showPaymentPane" data-lottery_count="1" class="consum-button">
+        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/payOne.png" mode="scaleToFill" />
+    </view>
+    <view bindtap="showPaymentPane" data-lottery_count="3" class="consum-button">
+        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/payThree.png" mode="scaleToFill" />
+    </view>
+    <view bindtap="showPaymentPane" data-lottery_count="5" class="consum-button">
+        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/payFive.png" mode="scaleToFill" />
+    </view>
+    <view bindtap="showPaymentPane" data-lottery_count="0" class="consum-button">
+        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/payAll.png" mode="scaleToFill" />
+    </view>
+</view>
+
+<view class="refresh_share">
+    <view class="refresh" catchtap="refresh">
+        <image src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/refresh.png" mode="scaleToFill" />
+    </view>
+    <button class="share_page" open-type="share">
+    </button>
+</view>
+<custompopup title="" id="custompopup" class="font-color-white">
+    <view class="good-data flex-column">
+        <view class="intro flex-row">
+            <image src="{{box_instance.image_url}}" mode="scaleToFill" />
+            <view class="right-area">
+                <view class="good-title font-size-30">
+                    {{box_instance.box_name}}
+                </view>
+                <view class="price flex-column flex-between">
+                    <view class="font-size-24 flex-row">
+                        <view>
+                            名称:
+                        </view>
+                        <view>
+                            明信片
+                        </view>
+                    </view>
+                    <view class="font-size-24 flex-row align-center">
+                        <view>
+                            单价:
+                        </view>
+                        <view class="sum-number" style="color: red;">
+                            ￥{{box_instance.box_price}}
+                        </view>
+                    </view>
+                    <view class="font-size-24 flex-row">
+                        <view>
+                            数量:
+                        </view>
+                        <view>
+                            {{lottery_count}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="sum flex-row-reverse align-center">
+            <view class="payment_amount font-size-35 flex-center">
+                ￥{{payment_amount_str}}
+            </view>
+            <view class="top-zongji font-size-24 flex-center">
+                总计:
+            </view>
+            <view class="font-size-24 flex-center">
+                {{lottery_count}}
+            </view>
+            <view class="font-size-24 flex-center">
+                明信片x
+            </view>
+        </view>
+    </view>
+    <view>
+        <view class="check-item flex-row flex-between font-size-28" bindtap="selectMyAddress">
+            <view class="flex-row">
+                <view>
+                    收货地址：
+                </view>
+                <view wx:if="{{isAddressEmpty}}">
+                    点击此处选择地址
+                </view>
+                <view wx:if="{{address}}" class="flex-column">
+                    <view class="flex-row">
+                        {{address.name}}
+                        <view>
+                            {{address.phone_num}}
+                        </view>
+                    </view>
+                    <view>
+                        {{address.region}}{{address.detail_info}}
+                    </view>
+                </view>
+            </view>
+            <view>
+                >
+            </view>
+        </view>
+
+        <view class="check-item flex-row align-center font-size-24" bindtap="toUseXbean">
+            <view class="unselect_checkbox" wx:if="{{!useXbean}}">
+
+            </view>
+            <image src="../../image/select.png" mode="scaleToFill" wx:if="{{useXbean}}" />
+            <view class="font-size-22">
+                使用仙豆(剩余{{xbean}})
+            </view>
+        </view>
+
+        <view class="check-item flex-row font-size-24" bindtap="agree">
+            <view class="unselect_checkbox" wx:if="{{!agree}}">
+
+            </view>
+            <image src="../../image/select.png" mode="scaleToFill" wx:if="{{agree}}" />
+            <view class="font-size-24" catchtap="toAgreement">本人已满18周岁且具备完全行为能力，支付即代表同意《购买协议》</view>
+        </view>
+        <view class="check-item flex-row-reverse font-size-24" bindtap="toMyCoupons">
+            <view class="flex-row flex-center">
+                使用优惠券抵扣 {{selectedCoupon ? discount_value_str : ''}} >
+            </view>
+        </view>
+        <view class="check-item font-size-24" bindtap="toShipmentRules">
+            《发货须知》
+        </view>
+    </view>
+    <view class="divider2">
+
+    </view>
+    <view class="sum-sumit flex-row flex-between">
+        <view class="flex-row align-center">
+            <view class="font-size-24">
+                总计:
+            </view>
+            <view class="sum-number2">
+                ￥{{payment_amount_after_discount_str}}
+            </view>
+        </view>
+        <view class="sumit-button" bindtap="toPay">
+            <view class="sumitButtonTextContainer">
+                <view class="sumitButtonText sumitButtonTextBorder">
+                    确认支付
+                </view>
+            </view>
+            <view class="sumitButtonTextContainer">
+                <view class="sumitButtonText">
+                    确认支付
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="width: 100%; height: 120rpx;">
+
+    </view>
+</custompopup>
+<viewAwardDetail id="viewAwardDetail" price="{{box_instance.box_price}}" fromBox="{{fromBox}}" awardDetail="{{awardDetail}}"></viewAwardDetail>

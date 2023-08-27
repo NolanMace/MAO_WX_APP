@@ -1,0 +1,97 @@
+<!--pages/winbar/winbar.wxml-->
+<view class="top_image">
+    <image class="top_url" src="{{top_url}}" mode="aspectFill" />
+    <view class="cover_container flex-row">
+        <image class="cover_url" src="{{cover_url}}" mode="scaleToFill" />
+        <view class="window_name_container">
+            <stokenText strokeColor="grey" fontSize='34' width='100' text="{{window_name}}"></stokenText>
+        </view>
+    </view>
+</view>
+
+<view class="navigation flex-row">
+    <view class="navigation_item_container flex-row flex-center" bindtap="switchCategory" data-category="一番赏">
+        <stokenText text="一番赏" fontSize="40" width="200" strokeColor="{{selectBox ? '#da0101' : '#323232'}}"></stokenText>
+    </view>
+    <view class="navigation_item_container flex-row flex-center" bindtap="switchCategory" data-category="竞技赏">
+        <stokenText text="竞技赏" fontSize="40" width="200" strokeColor="{{selectDq ? '#da0101' : '#323232'}}"></stokenText>
+    </view>
+    <view class="navigation_item_container flex-row flex-center" bindtap="switchCategory" data-category="无限赏">
+        <stokenText text="无限赏" fontSize="40" width="200" strokeColor="{{selectPool ? '#da0101' : '#323232'}}"></stokenText>
+    </view>
+</view>
+
+<view class="scroll-view">
+    <view class="scroll-item" wx:if="{{selectBox}}" wx:for="{{boxes}}" wx:key="index" bindtap="toChoushang" data-window_bar_id="{{item.window_bar_id}}">
+        <view class="box_pool_img_container">
+            <image src="{{item.image_url}}" mode="aspectFill" />
+            <view class="new_label" wx:if="{{item.show_new_label}}">
+                <image src="../../image/newbox.png" mode="scaleToFill" />
+            </view>
+            <view class="{{labelStyle}} font-size-22 font-weight-bold font-color-white">
+                {{category}}
+            </view>
+        </view>
+        <view class="scroll-item-data font-color-white">
+            <view id="serie-title" class="font-size-26">
+                {{item.window_bar_name}}
+            </view>
+            <view id="serie-data2">
+                <view class="font-size-24">
+                    ￥{{item.priceStr}}/抽
+                </view>
+                <image wx:if="{{item.label_type}}" src="{{item.label_url}}" mode="scaleToFill" />
+                <view class="tianchong" wx:if="{{!item.label_type}}">
+
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="scroll-item" wx:if="{{selectDq}}" wx:for="{{dqs}}" wx:key="index" bindtap="toChoushang" data-window_bar_id="{{item.window_bar_id}}">
+        <view class="box_pool_img_container">
+            <image src="{{item.image_url}}" mode="scaleToFill" />
+            <view class="new_label" wx:if="{{item.show_new_label}}">
+                <image src="../../image/newbox.png" mode="scaleToFill" />
+            </view>
+            <view class="{{labelStyle}} font-size-22 font-weight-bold font-color-white">
+                {{category}}
+            </view>
+        </view>
+        <view class="scroll-item-data font-color-white">
+            <view id="serie-title" class="font-size-26">
+                {{item.window_bar_name}}
+            </view>
+            <view id="serie-data2">
+                <view class="font-size-24">
+                    ￥{{item.priceStr}}/抽
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="scroll-item" wx:if="{{selectPool}}" wx:for="{{pools}}" wx:key="index" bindtap="toChoushang" data-window_bar_id="{{item.window_bar_id}}">
+        <view class="box_pool_img_container">
+            <image src="{{item.image_url}}" mode="scaleToFill" />
+            <view class="new_label" wx:if="{{item.show_new_label}}">
+                <image src="../../image/newbox.png" mode="scaleToFill" />
+            </view>
+            <view class="{{labelStyle}} font-size-22 font-weight-bold font-color-white">
+                {{category}}
+            </view>
+        </view>
+        <view class="scroll-item-data font-color-white">
+            <view id="serie-title" class="font-size-26">
+                {{item.window_bar_name}}
+            </view>
+            <view id="serie-data2">
+                <view class="font-size-24">
+                    ￥{{item.priceStr}}/抽
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view style="width: 100%; height: {{tabBarHeight}}rpx;">
+</view>
+<view class="custom_navigatebar flex-column-reverse" style="height: {{menuButtonBottom}}px; background: transparent;">
+    <image style="margin-left: 20rpx; width: 120rpx; height: 70rpx;" bindtap="back" src="../../image/back.png" mode="scaleToFill" />
+</view>

@@ -1,0 +1,28 @@
+<!--components/viewAwardDetail.wxml-->
+<view class="container" bindtap="back" wx:if="{{visible}}">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" duration="{{duration}}" circular="{{circular}}">
+        <swiper-item wx:for="{{awardDetail}}" wx:key="*this">
+            <image class="swiper-item-image" src="{{item.product_image_url}}" mode="scaleToFill" />
+            <view style="color: white; font-size: 28rpx; margin-bottom: 20rpx;">
+                款式:{{item.product_level}}赏 {{item.product_name}}
+            </view>
+            <view wx:if="{{fromBox}}">
+                <view wx:if="{{item.isNormal}}">
+                    <view style="color: white; font-size: 26rpx;">
+                        参考价:￥{{price}}，获得概率为{{item.odds}}%
+                    </view>
+                </view>
+                <view wx:if="{{!item.isNormal}}">
+                    <view style="color: white; font-size: 26rpx;">
+                        非卖品，随最后一抽赠送
+                    </view>
+                </view>
+            </view>
+            <view wx:if="{{fromPool}}">
+                <view style="color: white; font-size: 26rpx;">
+                    参考价{{item.product_price}}元，获得概率约为{{item.probability_str}}%
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

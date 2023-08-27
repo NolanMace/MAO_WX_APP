@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "navigateRadiusButton": "../../components/navigateRadiusButton",
+        "stokenText": "../../components/strokeText"
+    }
+}

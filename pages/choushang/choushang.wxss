@@ -1,0 +1,528 @@
+/* pages/choushang/choushang.wxss */
+.container {
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/background.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+}
+
+.back_button {
+    margin-bottom: 15rpx;
+    margin-left: 20rpx;
+}
+
+.container1 {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.head {
+    position: relative;
+    width: 635rpx;
+    height: 235rpx;
+    padding: 20rpx;
+    padding-top: 24rpx;
+    align-items: center;
+    border: 8rpx solid black;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/headBg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 30rpx;
+    overflow: hidden;
+    margin: 10rpx auto;
+    flex-shrink: 0;
+}
+
+.series-fengmian {
+    width: 250rpx;
+    height: 183rpx;
+    border: #c50102 solid 5rpx;
+    overflow: hidden;
+    margin-left: 28rpx;
+    margin-bottom: 4rpx;
+}
+
+.series-fengmian>image {
+    width: 250rpx;
+    height: 183rpx;
+}
+
+.box-number-bg {
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/boxNumber.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100rpx;
+    height: 60rpx;
+    position: absolute;
+    bottom: 40rpx;
+    left: 38rpx;
+}
+
+.box-number {
+    position: absolute;
+    bottom: 36rpx;
+    left: 50rpx;
+    height: 60rpx;
+    width: 100rpx;
+    overflow: visible;
+}
+
+.box-number-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60rpx;
+    white-space: nowrap;
+}
+
+.box-number-stroke {
+    color: white;
+    font-size: 20;
+    font-weight: bold;
+    -webkit-text-stroke: 8rpx #c50101;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.box-number-text {
+    color: white;
+    font-size: 20;
+    font-weight: bold;
+    position: absolute;
+}
+
+.series-data-container {
+    height: 210rpx;
+    width: 300rpx;
+    margin-left: 55rpx;
+    justify-content: space-between;
+}
+
+.box_name {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rule_button_container {
+    position: absolute;
+    top: 80rpx;
+    right: 15rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.rule_button_container image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.shipment_tips_container {
+    position: absolute;
+    bottom: 20rpx;
+    right: 45rpx;
+    width: 300rpx;
+    height: 100rpx;
+}
+
+#button-container1 {
+    margin-top: 60rpx;
+    margin-bottom: 10rpx;
+    width: 100%;
+    /* position: sticky; */
+}
+
+.preview {
+    width: 185rpx;
+    height: 90rpx;
+    margin: 10rpx;
+}
+
+.record {
+    width: 185rpx;
+    height: 90rpx;
+    margin: 10rpx;
+}
+
+.switchBoxButtonContainer {
+    position: absolute;
+    right: 18rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.switchBoxButton {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.switchBoxButton image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.switchBoxButtonTextStyle {
+    position: absolute;
+    color: white;
+    font-size: 26rpx;
+    font-weight: bold;
+    left: 16rpx;
+    bottom: 0;
+    z-index: 3;
+}
+
+.switchBoxButtonTextBorder {
+    position: absolute;
+    -webkit-text-stroke: 10rpx rgb(54, 53, 53);
+    z-index: 2;
+}
+
+.record-item {
+    width: 85%;
+    height: 120rpx;
+    margin: 10rpx auto;
+    background: #35373d;
+    border: #c5c5c5 solid 2rpx;
+    border-radius: 20rpx;
+    background-image: url('https://yfsmax.oss-cn-hangzhou.aliyuncs.com/Asset%20100.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.item-left {
+    align-items: center;
+    margin-left: 10rpx;
+}
+
+.item-left>image {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    border: #c5c5c5 solid 4rpx;
+}
+
+.user-data {
+    height: 75rpx;
+    padding-left: 18rpx;
+}
+
+.item-right {
+    height: 75rpx;
+    width: 200rpx;
+    margin: auto 15rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.award-level {
+    margin-bottom: 5rpx;
+    height: 35rpx;
+    width: 90rpx;
+    display: flex;
+    flex-direction: row-reverse;
+    color: #ffc321;
+}
+
+.award-title {
+    max-width: 200rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.goods-page {
+    margin-top: 10rpx;
+}
+
+.awards-page {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 15rpx;
+    justify-items: center;
+    align-items: center;
+}
+
+.good-label {
+    width: 222rpx;
+    margin-top: 22rpx;
+    overflow: hidden;
+}
+
+.box-item-cover {
+    width: 210rpx;
+    height: 210rpx;
+    border: #c50101 solid 7rpx;
+}
+
+.box-item-cover>image {
+    width: 210rpx;
+    height: 210rpx;
+}
+
+.product_level {
+    left: 0;
+    top: 0;
+    min-width: 30rpx;
+    height: 30rpx;
+    background: #c50101;
+    color: white;
+    font-weight: bold;
+    font-size: 22rpx;
+    display: flex;
+    align-items: center;
+    padding-left: 5rpx;
+    padding-right: 25rpx;
+    white-space: nowrap;
+    clip-path: polygon(0% 0%, 90% 0%, 75% 100%, 0% 100%);
+}
+
+.product_number_container {
+    bottom: 0;
+    right: 0;
+    min-width: 25rpx;
+    height: 33rpx;
+}
+
+.product_number {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    min-width: 25rpx;
+    height: 35rpx;
+    font-size: 22rpx;
+    padding-right: 10rpx;
+    padding-left: 25rpx;
+    background: #c50101;
+    color: white;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.productNameAndCount {
+    margin-left: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.productName {
+    width: 100%;
+    margin: 10rpx 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.product_odds {
+    margin-bottom: 7rpx;
+    color: #c5c5c5;
+}
+
+.product_price {
+    color: #c5c5c5;
+    font-size: 20rpx;
+}
+
+.consum-button {
+    width: 140rpx;
+    height: 70rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.consum-button image {
+    width: 140rpx;
+    height: 70rpx;
+}
+
+.margin-bottom {
+    margin-bottom: 10rpx;
+}
+
+.small-checkbox {
+    transform: scale(0.6);
+    /* 设置大小缩放 */
+}
+
+.good-data {
+    width: 650rpx;
+    height: 270rpx;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30rpx;
+    align-items: center;
+    border-radius: 20rpx;
+    overflow: hidden;
+}
+
+.good-data .intro {
+    width: 650rpx;
+    height: 160rpx;
+    padding-top: 26rpx;
+    padding-bottom: 25rpx;
+    color: black;
+    background-color: #d0d4dd;
+}
+
+.good-data .intro>image {
+    flex-shrink: 0;
+    height: 160rpx;
+    width: 160rpx;
+    margin-left: 20rpx;
+}
+
+.right-area {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25rpx;
+    max-width: 420rpx;
+}
+
+.good-title {
+    padding-left: 15rpx;
+    width: 100%;
+    height: 50rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.price {
+    font-size: 24rpx;
+    margin-top: 10rpx;
+    height: 100%;
+}
+
+.sum {
+    width: 650rpx;
+    background: #c50102;
+    padding: 8rpx 0;
+    flex: 1;
+}
+
+.payment_amount {
+    margin-right: 20rpx;
+}
+
+.sum .sum-price {
+    margin-left: 28rpx;
+}
+
+.pay-way {
+    margin-bottom: 20rpx;
+}
+
+.check-pay-way {
+    margin-bottom: 30rpx;
+    margin-top: 40rpx;
+}
+
+.check-item {
+    width: 650rpx;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30rpx;
+}
+
+.check-item image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 15rpx;
+    flex-shrink: 0;
+}
+
+.weixin-card {
+    margin-bottom: 30rpx;
+}
+
+.payment-label {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.check-bank {
+    margin-right: 100rpx;
+}
+
+.sum-sumit {
+    margin-top: 30rpx;
+    margin-bottom: 90rpx;
+}
+
+.top-zongji {
+    margin-left: 25rpx;
+}
+
+.sum-number1 {
+    font-size: 40rpx;
+    color: red;
+}
+
+.sum-number2 {
+    font-size: 40rpx;
+}
+
+.sumit-button {
+    background-color: #c50102;
+    border: black solid 6rpx;
+    border-radius: 10rpx;
+    width: 220rpx;
+    height: 70rpx;
+    position: relative;
+}
+
+.sumitButtonTextContainer {
+    width: 220rpx;
+    height: 70rpx;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sumitButtonText {
+    font-size: 32rpx;
+    font-weight: bolder;
+    color: white;
+}
+
+.sumitButtonTextBorder {
+    -webkit-text-stroke: 10rpx black;
+}
+
+#consume-buttons {
+    width: 95%;
+    position: fixed;
+    left: 20rpx;
+    bottom: 100rpx;
+}
+
+#serie-num {
+    width: 100%;
+    height: 45rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(248, 164, 53);
+}
+
+#remain-num {
+    color: #c50101;
+    font-size: 40rpx;
+    font-weight: bold;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+}

@@ -1,0 +1,56 @@
+<!--pages/changeBox/changeBox.wxml-->
+<view class="background">
+
+</view>
+
+<view class="segment-container flex-row align-center" style="margin-top: {{menuButtonBottom + 10}}px;">
+    <view wx:for="{{segmentation}}" class="{{item.rangeButtonStyle}} flex-row flex-center" data-start="{{item.start}}" data-end="{{item.end}}" data-index="{{index}}" bindtap="onRangeButtonClick">
+        <view class="font-size-32 font-color-white">
+            {{item.start}}~{{item.end}}
+        </view>
+        <view class="font-size-32 font-color-white">
+            箱
+        </view>
+    </view>
+</view>
+
+<view class="flex-column align-center" style="width: 100%;">
+    <view class=" {{ (item.left_num == '0') ? 'box-item-container-zero' :  'box-item-container' }} flex-row flex-center font-color-white" wx:for="{{filteredBoxes}}" data-box_number="{{item.box_number}}" bindtap="selectBox">
+        <view class="trapezoid flex-row align-center font-size-26">
+            {{item.box_number}}
+        </view>
+        <view class="box-item">
+            <image class="box_image" src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/box.png" mode="scaleToFill"/>
+            <view style="width: 100%;margin-bottom: 30rpx; color: #9a6464;" class="flex-row-reverse font-size-26">
+                剩{{item.left_num}}张
+            </view>
+            <view class="flex-row">
+                <view class="box-image">
+                </view>
+                <view class="awardItem-container flex-row flex-between flex-wrap">
+                
+                    <view wx:for="{{item.box_item_counts}}" wx:for-item="counts" class="flex-row flex-between award-item">
+                        <view class="font-size-24 font-weight-bold">
+                            {{counts.product_level}}赏
+                        </view>
+                        <view class="flex-row font-size-26 font_weight_bolder">
+                            <view>
+                                {{counts.product_left_count}}/
+                            </view>
+                            <view>
+                                {{counts.product_total_count}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <image class="sold-out-image" wx:if="{{item.left_num == 0}}" src="https://yfsmax.oss-cn-hangzhou.aliyuncs.com/sold_out.png"></image>
+    </view>
+   
+</view>
+
+<view class="custom_navigatebar flex-column-reverse" style="height: {{menuButtonBottom}}px;" bindtap="back">
+
+    <image style="margin-left: 20rpx; width: 120rpx; height: 70rpx;" bindtap="back" src="../../image/back.png" mode="scaleToFill" />
+</view>

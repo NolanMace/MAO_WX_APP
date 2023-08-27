@@ -1,0 +1,19 @@
+/* pages/login.wxss */
+.logo {
+    width: 500rpx;
+    height: 500rpx;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200rpx;
+}
+.logo image {
+    width: 500rpx;
+    height: 500rpx;
+}
+.loginButton {
+    background-color: tomato;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 400rpx;
+    color: white;
+} 

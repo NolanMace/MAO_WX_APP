@@ -1,0 +1,11 @@
+<!--custom-tab-bar/index.wxml-->
+<view class="custom-tab-bar-container">
+    <view class="top"></view>
+    <view class="custom-tab-bar">
+        <block wx:for="{{list}}" wx:key="index">
+            <view class="tab-item" style="background-color: {{currentIndex === index ? selectedColor : color}}" bindtap="selectTab" data-index="{{index}}">
+                <image src="{{currentIndex === index ? item.selectedIconPath : item.iconPath}}" mode="scaleToFill"></image>
+            </view>
+        </block>
+    </view>
+</view>

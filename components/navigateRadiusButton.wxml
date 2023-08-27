@@ -1,0 +1,13 @@
+<!--components/radiusButton.wxml-->
+<view class="{{buttonStyle}}" style="background-color: {{buttonBackGround}}; width: {{width}}; height: {{height}};">
+    <view class="buttonTextContainer">
+        <view class="{{buttonTextStyle}} {{buttonTextBorder}}" style="font-size: {{fontSize}};">
+            {{buttonText}}
+        </view>
+    </view>
+    <view class="buttonTextContainer">
+        <view class="{{buttonTextStyle}}" style="font-size: {{fontSize}};">
+            {{buttonText}}
+        </view>
+    </view>
+</view>
